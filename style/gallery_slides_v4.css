@@ -7,12 +7,50 @@
 html,
 body {
   background-color: #121212;
-  margin: 5px;
   position: relative;
 }
 
 /************************************/
+/* P5 JS */
+
+main canvas {
+	position: absolute !important;
+	width: 100% !important;
+	height: 100% !important;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+/************************************/
+/* SCROLLBAR */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+} 
+
+/************************************/
 /* BOAT */
+
+#defaultCanvas0 {
+	
+}
 
 .infobox {
 	font-family: Garamond, Calibri;
@@ -44,7 +82,7 @@ body {
 	height: 40px;
 	right: 46px;
 	bottom: -12px;
-	z-index: 0;
+	z-index: 1;
 }
 
 .b1 {
@@ -142,11 +180,50 @@ body {
     height: 100%;
 }
 
+.enterButton:not(:active) .enterButtonImpressum:not(:active) {
+    transition: top .2s linear;
+}
+
+.enterButton:active .enterButtonImpressum:active {
+	box-shadow: none;
+	position: relative;
+	top: .2em;
+}
+
 .enterButton {
+	position: relative;
 	display: inline-block;
 	text-decoration: none;
 	font-weight: bold;
 	/*text-shadow: rgb(255, 239, 0) -1px -1px, rgb(164, 164, 164) 1px 1px;*/
+	  /*text-shadow: 
+    0 1px 0 #ccc, 
+    0 2px 0 #c9c9c9, 
+    0 3px 0 #bbb, 
+    0 4px 0 #b9b9b9, 
+    0 5px 0 #aaa, 
+    0 6px 1px rgba(0,0,0,.1), 
+    0 0 5px rgba(0,0,0,.1), 
+    0 1px 3px rgba(0,0,0,.3), 
+    0 3px 5px rgba(0,0,0,.2), 
+    0 5px 10px rgba(0,0,0,.25), 
+    0 10px 10px rgba(0,0,0,.2), 
+    0 20px 20px rgba(0,0,0,.15);*/
+	padding: 11px 22px 10px 22px;
+	background-color: rgb(234, 180, 18);
+	border-radius: 7px;
+	box-shadow: rgb(134, 102, 7) 0 .3em;
+	cursor: pointer;
+	margin: 5px;
+	color: rgb(17, 17, 17);
+	text-align: center;
+	letter-spacing: 2px;
+}
+
+.enterButtonImpressum {
+	/*display: inline-block;
+	text-decoration: none;
+	font-weight: bold;
 	  text-shadow: 
     0 1px 0 #ccc, 
     0 2px 0 #c9c9c9, 
@@ -168,17 +245,22 @@ body {
 	margin: 5px;
 	color: rgb(17, 17, 17);
 	text-align: center;
-	letter-spacing: 2px;
-}
-
-.enterButton:not(:active) {
-    transition: top 1s linear;
-}
-
-.enterButton:active {
-	box-shadow: none;
+	letter-spacing: 2px;*/
 	position: relative;
-	top: .2em;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: rgb(255, 239, 0) -1px -1px, rgb(164, 164, 164) 1px 1px;
+    text-shadow: 0 1px 0 #fffbfb, 0 2px 0 #fdfdfd, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 30px 4px rgba(240, 240, 240, 0.15);
+    padding: 11px 22px 10px 27px;
+    /*background-color: rgb(249, 249, 249);
+    box-shadow: rgb(255, 255, 255) 0 .3em;*/
+    cursor: pointer;
+    margin: 5px;
+    color: rgb(111, 106, 106);
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 2em;
 }
 
 .buttonAppear {
@@ -336,27 +418,48 @@ body {
 [id^=lightbox-] .flowContent {
 	padding: 1em;
   font-size: .8em;
+z-index: 2;
+position: relative;
 }
+[id^=lightbox-] .flowContentFooter {
+	padding: 1em;
+  font-size: .8em;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 0;
+	z-index: 2;
+	position: absolute;
+}
+
 [id^=lightbox-] .contact {
-  display: block;
-  margin: 1em;
+  display: flex;
   padding: 1em;
+  
   position: absolute;
   height: 100%;
   width: 100%;
   /*transform: translateY(50%);*/
   font-size: 1.2em;
   opacity: 1;
+justify-content: center;
+align-items: center;
+}
+[id^=lightbox-] .title b {
+  font-size: 1em;
+  margin-right: 1em;
+}
+.title {
+    font-family: "Raleway", sans-serif;
 }
 [id^=lightbox-] .title {
   display: block;
   margin: 0;
   padding: 1em;
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
   /*transform: translateY(50%);*/
-  font-size: 1.2em;
+  font-size: .8em;
   opacity: 1;
 }
 [id^=lightbox-] .title::after {
@@ -373,7 +476,7 @@ body {
   mix-blend-mode: soft-light;
 }
 [id^=lightbox-] img {
-  max-height: 90vh;
+  max-height: 80vh;
   max-width: 100%;
   margin: 0;
   padding: 0;
@@ -396,12 +499,16 @@ body {
   color: #fff;
   z-index: 999;
 }
+
 .closeContact {
-  width: 70px;
-  height: 70px;
+  width: 30px;
+  height: 30px;
   position: absolute;
+  margin: 1em;
   right: 0;
   top: 0;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+	box-shadow: rgba(185, 162, 162, 0.8) 0 .4em;
   background-color: rgba(255,255,255, 0.8);
   display: flex;
   align-items: center;
@@ -413,27 +520,36 @@ body {
   color: #000;
   z-index: 999;
 }
+
+.closeContact:active {
+	box-shadow: none;
+	top: .2em;
+}
 /*
 [id^=lightbox-] a.close::after {
 content: "X";
 }*/
 
-.gallery__v2 {
+.gallery__v2, .gallery__v3, .gallery__v4, .gallery__v5 {
   display: flex;
+	justify-content: center;
+	align-items: center;
   padding: 2px;
   transition: 0.3s;
 }
-.gallery__v2:hover .gallery__image {
+.gallery__v2:hover .gallery__image, .gallery__v3:hover .gallery__image, .gallery__v4:hover .gallery__image, .gallery__v5:hover .gallery__image {
   filter: grayscale(1);
 }
 .gallery__column {
   display: flex;
   flex-direction: column;
-  width: 25%;
+  /*! width: 25%; */
 }
 .gallery__link {
-  margin: 2px;
+  margin: 21px;
   overflow: hidden;
+position: relative;
+z-index: 1;
 }
 .gallery__link:hover .gallery__image {
   filter: grayscale(0);
@@ -447,10 +563,10 @@ content: "X";
 .gallery__image {
   display: block;
   width: 100%;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 .gallery__image:hover {
-  transform: scale(1.1);
+  transform: scale(0.99);
 }
 .gallery__caption {
   position: absolute;
@@ -459,40 +575,156 @@ content: "X";
   padding: 25px 15px 15px;
   width: 100%;
   font-family: "Raleway", sans-serif;
-  font-size: 16px;
-  color: white;
-  opacity: 0;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
-  transition: 0.3s;
+	font-size: 1em;
+	color: white;
+	opacity: 0;
+	background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.96) 95%, rgba(255, 255, 255, 0) 100%);
+	transition: 0.1s;
 }
 
-@media only screen and (min-width: 400px) {
-  #gallery {
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  #gallery > div {
-    width: 48%;
-    margin: 1%;
-  }
+/********************************************************************/
+
+.pnContainer {
+	width: 90%;
+	position: fixed;
+	height: 100%;
+	top: 0;
+	/*display: flex;*/
+	display:none;
+	left: 50%;
+	transform: translateX(-50%);
 }
-@media (max-width: 800px) and (max-width: 350px) {
-  #gallery > div {
-    width: 98%;
-  }
+
+.mySlides {
+	/*display: none;*/
 }
+
+.slideshow-container img {
+	vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: fixed;
+  border-radius: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(255,255,255,0.8);
+}
+
+.dotContainer {
+	position: fixed;
+	right: 18px;
+	top: 0;
+	padding: 1em;
+	display: inline-block;
+}
+
+.dot img {
+}
+
+/* The dots/bullets/indicators */
+.dot {
+	cursor: pointer;
+	/*height: 30px;
+	width: 40px;*/
+	margin: 1em;
+	background-color: rgb(234, 180, 18);
+	border-radius: 5%;
+	display: block;
+	transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #fff;
+	box-shadow: none;
+	position: relative;
+	top: .2em;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* Cards */
+
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
 /* (max) value or smaller */
-@media only screen and (max-width: 800px) {
-	.gallery__v2 {
-		display: inline-block;
-		padding: 2px;
-		transition: 0.3s;
+@media only screen and (min-width: 900px) {
+	.dotContainer {
+		display: none;
 	}
 	.gallery__column {
-		display: flex;
-		flex-direction: column;
-		width: 90%;
+			display: flex;
+			flex-direction: column;
+	}
+	.middle {
+		position: relative;
+		display: block !important;
+		overflow: auto;
+		height: 100vh;
+		width: 370px;
+		top: 0px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.rightSlide {
+		position: fixed;
+		display: block !important;
+		overflow: auto;
+		height: 100vh;
+		right: 0;
+		top: 0;
+	}
+	.leftSlide {
+		position: fixed;
+		display: block !important;
+		overflow: auto;
+		height: 100vh;
+		left: 0;
+		top: 0;
 	}
 }

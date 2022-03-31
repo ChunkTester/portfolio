@@ -6,109 +6,45 @@
 
 html,
 body {
-  background-color: #121212;
-  margin: 5px;
+  display: flex;
+	justify-content: center;
   position: relative;
+  background-color: #121212;
 }
 
-/************************************/
-/* BOAT */
-
-.infobox {
-	background-color: rgb(234, 180, 18);
-	width: 50%;
-	height: 80%;
-}
-
-/************************************/
-/* ENTER */
-
-.buttonContainer {
-    position: fixed;
-		right: 30px;
-		bottom: 90px;
-    z-index: 9;
-}
-
-.button {
-    height: 30px;
-    width: 180px;
-    background-color: #270940;
-    opacity: .9;
-    border-radius: 15px;
-}
-
-.enter {
-		font-family: 'Sans Serif';
-		text-decoration: none;
-    width: 100%;
-    height: 100%;
-}
-
-.enterButton {
-	display: inline-block;
-	text-decoration: none;
-	font-weight: bold;
-	/*text-shadow: rgb(255, 239, 0) -1px -1px, rgb(164, 164, 164) 1px 1px;*/
-	  text-shadow: 
-    0 1px 0 #ccc, 
-    0 2px 0 #c9c9c9, 
-    0 3px 0 #bbb, 
-    0 4px 0 #b9b9b9, 
-    0 5px 0 #aaa, 
-    0 6px 1px rgba(0,0,0,.1), 
-    0 0 5px rgba(0,0,0,.1), 
-    0 1px 3px rgba(0,0,0,.3), 
-    0 3px 5px rgba(0,0,0,.2), 
-    0 5px 10px rgba(0,0,0,.25), 
-    0 10px 10px rgba(0,0,0,.2), 
-    0 20px 20px rgba(0,0,0,.15);
-	padding: 11px 22px 10px 27px;
-	background-color: rgb(234, 180, 18);
-	border-radius: 7px;
-	box-shadow: rgb(134, 102, 7) 0 .3em;
-	cursor: pointer;
-	margin: 5px;
-	color: rgb(17, 17, 17);
-	text-align: center;
-	letter-spacing: 2px;
-}
-
-.enterButton:not(:active) {
-    transition: top 1s linear;
-}
-
-.enterButton:active {
-	box-shadow: none;
-	position: relative;
-	top: .2em;
+.largeFont {
+	font-size: 1em;
 }
 
 .container {
-	padding: 1em;
+	font-family: Courier, Sans;
+  font-size: .8em;
 	color: white;
+	padding: 1em;
+	max-width: 800px;
 }
 
 .content {
   display: block;
-  margin: 1em;
-  padding: 1em;
   height: 100%;
   width: 100%;
-  font-size: .8em;
-  opacity: 1;
+  padding: 1em;
   text-decoration: none;
 }
 
 .content a {
-  text-decoration: none;
   color: white;
+  text-decoration: none;
+}
+
+.content a:hover, a:visited {
+	color: white;
 }
 
 .title {
   display: block;
   margin: 0;
-  padding: 1em 1em .1em 1em;
+  /*padding: 1em 1em .1em 1em;*/
   width: 100%;
   font-size: 1.2em;
   opacity: 1;
@@ -117,7 +53,8 @@ body {
 .abs {
   display: block;
   margin: 0;
-  padding: 1em;
+	padding-top: .8em;
+	padding-bottom: .8em;
 }
 
 .par {
