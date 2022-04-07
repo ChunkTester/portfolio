@@ -36,20 +36,20 @@
 		</div>
 	</noscript>
 	<div class="infoContainer">
-		<div class="buttonContainer buttonAppear">
+		<div id="impButton" class="buttonContainer buttonAppear">
 			<a href="#lightbox-999"><span class="dot impressumButton">
 					<div class="eyeSolid2 icon"></div>
 				</span></a>
 		</div>
-		<div>
-			<div class="boat b1"></div>
+		<div id="myBoatContainer">
+			<div id="myBoat" class="boat b1"></div>
 		</div>
 	</div>
 
 	<div class="lightbox" id="lightbox-999">
 		<div class="content infobox">
 			<!--onmouseover="runLoop" onmouseout="stopLoop" -->
-			<main class="p5Container"></main>
+			<!--<main class="p5Container"></main>-->
 			<div class="contact">
 				<b></b>
 				<div class="flowContent">
@@ -631,10 +631,14 @@
 			</div>
 		</div>
 	</div>
+	<footer id="myFooter">
+		<div class="littleSee"></div>
+	</footer>
 	<!-- SCRIPT -->
 	<script type="text/javascript" src="js/slide.js"></script>
-	<script type="text/javascript" src="js/p5.min.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/sticky.js"></script>
+	<!--<script type="text/javascript" src="js/p5.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>-->
 </body>
 
 </html>

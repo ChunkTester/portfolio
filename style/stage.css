@@ -470,10 +470,10 @@ body {
 .boat {
 	background-image: url('../assets/boot.png');
 	background-repeat: no-repeat;
-	position: relative;
+	position: absolute;
 	width: 40px;
 	height: 40px;
-	top: 12px;
+	top: -27px;
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: 99;
